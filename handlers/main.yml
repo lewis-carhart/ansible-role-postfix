@@ -1,0 +1,10 @@
+---
+  - name: start-postfix
+    service:
+      name: postfix
+      state: started
+
+  - name: reload-postfix
+    service:
+      name: postfix
+      state: reloaded

@@ -1,0 +1,20 @@
+---
+  - name: Postfix | Install Postfix
+    yum:
+      name: postfix
+      state: present
+
+  - name: Postfix | Write configuration file
+    template:
+      src: main.cf
+      dest: /etc/postfix/main.cf
+      owner: root
+      group: root
+      mode: 0644
+    notify: reload-postfix
+    with_dict: "{{ postfix }}"
+
+  - name: Postfix | Enable postfix on start up
+    systemd:
+      name: postfix
+      enabled: yes
