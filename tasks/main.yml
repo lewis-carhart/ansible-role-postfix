@@ -35,8 +35,7 @@
       group: root
       mode: 0644
     notify: start-postfix
-    with_dict: "{{ postfix.header_checks | default({}) }}"
-
+    
   - name: Postfix | Enable postfix on start up
     systemd:
       name: postfix
