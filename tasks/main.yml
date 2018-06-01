@@ -4,15 +4,24 @@
       name: postfix
       state: present
 
-  - name: Postfix | Write configuration file
+  - name: Postfix | Write main.cf file
     template:
       src: main.cf
       dest: /etc/postfix/main.cf
       owner: root
       group: root
       mode: 0644
-    notify: reload-postfix
-    with_dict: "{{ postfix }}"
+    with_dict: "{{ postfix_main }}"
+
+  - name: Postfix | Write master.cf file
+    template:
+      src: main.cf
+      dest: /etc/postfix/master.cf
+      owner: root
+      group: root
+      mode: 0644
+    notify: start-postfix
+    with_dict: "{{ postfix_master }}"
 
   - name: Postfix | Enable postfix on start up
     systemd:
