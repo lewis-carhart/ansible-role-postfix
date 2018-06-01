@@ -2,7 +2,7 @@
   - name: Debug | Test
     debug:
       msg: "{{ item }}"
-    with_dict: "{{ postfix.header_checks | default({}) }}"
+    with_dict: "{{ postfix.main | default({}) }}"
 
   - name: Postfix | Install Postfix
     yum:
@@ -16,7 +16,6 @@
       owner: root
       group: root
       mode: 0644
-    with_dict: "{{ postfix.main | default({}) }}"
 
   - name: Postfix | Write master.cf file
     template:
@@ -25,7 +24,6 @@
       owner: root
       group: root
       mode: 0644
-    with_dict: "{{ postfix.master | default({}) }}"
 
   - name: Postfix | Write header_checks file
     template:
@@ -35,7 +33,7 @@
       group: root
       mode: 0644
     notify: start-postfix
-    
+
   - name: Postfix | Enable postfix on start up
     systemd:
       name: postfix
