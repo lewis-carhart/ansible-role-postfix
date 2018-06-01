@@ -1,5 +1,6 @@
 ---
-  - debug:
+  - name: Debug
+    debug:
       msg: "{{ item }}"
       with_dict: "{{ postfix }}"
 
