@@ -4,3 +4,5 @@
       test: 1000
     master:
       test1: 1001
+    header_checks:
+      test2: 1002
