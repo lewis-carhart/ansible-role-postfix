@@ -5,4 +5,5 @@
     master:
       test1: 1001
     header_checks:
-      test2: 1002
+      feedback_id: WARN
+      priority_filter: 10.0.1.16
