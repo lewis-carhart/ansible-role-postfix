@@ -1,5 +1,5 @@
 ---
-  - name: Debug
+  - name: Debug | Test
     debug:
       msg: "{{ item }}"
       with_dict: "{{ postfix | default({}) }}"
