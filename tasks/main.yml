@@ -1,8 +1,8 @@
 ---
   - name: Debug
     debug:
-      msg: "{{ item.key }}"
-      with_dict: "{{ postfix }}"
+      msg: "{{ item }}"
+      with_dict: "{{ postfix | default({}) }}"
 
   - name: Postfix | Install Postfix
     yum:
