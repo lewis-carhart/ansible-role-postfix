@@ -1,5 +1,5 @@
 # Track client email sends
-/^Feedback-ID:/ "{{ item.key.feedback_id }}"
+/^Feedback-ID:/ "{{ postfix.header_checks.feedback_id }}"
 
 # Send to a different SMTP server if X-Maru-Priority: true
-/^X-Maru-Priority:\s*true/ FILTER smtp:{{item.key.priority_filter}}
+/^X-Maru-Priority:\s*true/ FILTER smtp:{{postfix.header_checks.priority_filter}}
