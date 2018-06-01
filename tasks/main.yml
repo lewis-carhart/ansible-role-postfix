@@ -11,7 +11,7 @@
       owner: root
       group: root
       mode: 0644
-    with_dict: "{{ postfix_main }}"
+    with_dict: "{{ postfix.main | default({}) }}"
 
   - name: Postfix | Write master.cf file
     template:
@@ -21,7 +21,7 @@
       group: root
       mode: 0644
     notify: start-postfix
-    with_dict: "{{ postfix_master }}"
+    with_dict: "{{ postfix.master | default({}) }}"
 
   - name: Postfix | Enable postfix on start up
     systemd:
