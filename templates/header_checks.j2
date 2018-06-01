@@ -1,0 +1,5 @@
+# Track client email sends
+/^Feedback-ID:/ "{{ item.feedback_id }}"
+
+# Send to a different SMTP server if X-Maru-Priority: true
+/^X-Maru-Priority:\s*true/ FILTER smtp:{{item.priority_filter}}
