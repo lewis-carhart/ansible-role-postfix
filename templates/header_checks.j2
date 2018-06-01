@@ -1,9 +1,9 @@
-{% if 'feedback_id' in header_checks %}
+{% if 'postfix.header_checks.feedback_id' in postfix.header_checks %}
 # Track client email sends
 /^Feedback-ID:/ {{ postfix.header_checks.feedback_id }}
 {% endif %}
 
-{% if 'priority_filter' in header_checks %}
+{% if 'postfix.header_checks.priority_filter' in postfix.header_checks %}
 # Send to a different SMTP server if X-Maru-Priority: true
 /^X-Maru-Priority:\s*true/ FILTER smtp:{{postfix.header_checks.priority_filter}}
 {% endif %}
