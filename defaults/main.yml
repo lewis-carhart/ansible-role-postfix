@@ -1,3 +1,6 @@
 ---
   postfix:
-    
+    main:
+      test: 1000
+    master:
+      test1: 1001
