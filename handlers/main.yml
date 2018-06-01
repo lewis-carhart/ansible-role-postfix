@@ -8,3 +8,6 @@
     service:
       name: postfix
       state: reloaded
+
+  - name: check-postfix
+    command: /usr/sbin/postfix -c /etc/postfix check

@@ -12,10 +12,11 @@
 
  ## Handlers
 
- This role provides two handlers
+ This role provides three handlers
 
- *
- *
+ * start-postfix
+ * reload-postfix
+ * check-postfix
 
  ## Example Task with role
 
