@@ -2,8 +2,8 @@
   postfix:
     main:
       soft_bounce: "no"
-      queue_directory: "/var/spool/postfix"
-      command_directory: "/usr/sbin"
+      queue_directory: /var/spool/postfix
+      command_directory: /usr/sbin
     master:
       test1: 1001
     header_checks:
