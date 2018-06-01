@@ -16,8 +16,7 @@
       owner: root
       group: root
       mode: 0644
-    with_dict: "{{ postfix.main | default({}) }}"
-
+      
   - name: Postfix | Write master.cf file
     template:
       src: master.cf.j2
