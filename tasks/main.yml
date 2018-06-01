@@ -1,7 +1,7 @@
 ---
   - name: Debug
     debug:
-      msg: "{{ item }}"
+      msg: "{{ item.key }}"
       with_dict: "{{ postfix }}"
 
   - name: Postfix | Install Postfix
