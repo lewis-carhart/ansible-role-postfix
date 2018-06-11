@@ -293,12 +293,13 @@
 #                                                                   TRANSPORT(5)
 
 # Static transport options used across all environments
+
 {% for item in postfix.transport %}
+{% if item.email_addr is defined %}
+{{ item.email_addr }} {{ item.process }}
+
+{% endif %}
 {% if item.domain is defined %}
 {{ item.domain }} {{ item.rule }}:
-{% endif %}
-{% if item.email_addr is defined %}
-
-{{ item.email_addr }} {{ item.process }}
 {% endif %}
 {% endfor %}
