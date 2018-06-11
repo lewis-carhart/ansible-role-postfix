@@ -7,3 +7,10 @@
     header_checks:
       feedback_id: WARN
       priority_server: 10.0.1.16
+    transport:
+      - domain: "yahoo.com"
+        rule: slow
+      - domain: "yahoo.co.uk"
+        rule: slow
+      - domain: "aol.com"
+        rule: slow
