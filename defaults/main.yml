@@ -1,7 +1,5 @@
 ---
   postfix:
-    main_defaults: |
-
     main:
       soft_bounce: "no"
       queue_directory: /var/spool/postfix
