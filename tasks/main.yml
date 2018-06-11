@@ -2,7 +2,7 @@
   - name: Debug | Test
     debug:
       msg: "{{ item }}"
-    with_dict: "{{ postfix.main | default({}) }}"
+    with_dict: "{{ postfix.main.master | default({}) }}"
 
   - name: Postfix | Install Postfix
     yum:
