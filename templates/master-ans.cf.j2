@@ -11,5 +11,9 @@
 smtp      inet  n       -       n       -       -       smtpd
 
 {% if postfix.master.service is defined %}
-  {{ postfix.master.service }}
-{% endif %}  
+{{ postfix.master.service }}
+{% endif %}
+
+{% if postfix.master.type is defined %}
+{{ postfix.master.type }}
+{% endif %}
