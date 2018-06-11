@@ -296,9 +296,9 @@
 
 # Email address				Email Process - relates to script in /etc/postfix/scripts
 
-feedback@ecc.us.mc.maruhub.com		email_rescue_processor
-bounces.us.mc.maruhub.com			email_bounce_handler
-aolbounces.us.mc.maruhub.com			email_aol_bounce
+{% for item in postfix.transport %}
+{{ item.email }} {{ item.process }}:
+{% endfor %}
 
 # Transport options retrieved from hiera (if applicable)
 {% for item in postfix.transport %}

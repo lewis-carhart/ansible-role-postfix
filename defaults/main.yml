@@ -14,3 +14,5 @@
         rule: slow
       - domain: "aol.com"
         rule: slow
+      - email: "feedback@ecc.us.mc.maruhub.com"
+        process: email_rescue_processor
