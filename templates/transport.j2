@@ -294,8 +294,8 @@
 
 # Static transport options used across all environments
 
-{% for itemz in postfix.transport %}
-{{ itemz.email_addr }} {{ itemz.process }}
+{% for item in postfix.transport %}
+{{ item.email_addr }} {{ item.process }}
 {% endfor %}
 
 {% for item in postfix.transport %}
