@@ -25,6 +25,14 @@
       group: root
       mode: 0644
 
+  - name: Postfix | Write transport file
+    template:
+      src: transport.j2
+      dest: /etc/postfix/transport
+      owner: root
+      group: root
+      mode: 0644
+
   - name: Postfix | Write header_checks file
     template:
       src: header_checks.j2
