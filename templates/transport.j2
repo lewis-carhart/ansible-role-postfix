@@ -293,11 +293,8 @@
 #                                                                   TRANSPORT(5)
 
 # Static transport options used across all environments
-
 {% for item in postfix.transport %}
-{{ item.email_addr }} {{ item.process }}
+{% for key, value in item.items() %}
+{{ key }} {{ value }}
 {% endfor %}
-
-{% for item in postfix.transport %}
-{{ item.domain }} {{ item.rule }}:
 {% endfor %}
