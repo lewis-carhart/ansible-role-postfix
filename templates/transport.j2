@@ -295,12 +295,7 @@
 # Static transport options used across all environments
 
 # Email address				Email Process - relates to script in /etc/postfix/scripts
-
 {% for item in postfix.transport %}
-{{ item.email }} {{ item.process }}:
-{% endfor %}
-
-# Transport options retrieved from hiera (if applicable)
-{% for item in postfix.transport %}
+{{ item.email }}  {{ item.process }}
 {{ item.domain }} {{ item.rule }}:
 {% endfor %}
