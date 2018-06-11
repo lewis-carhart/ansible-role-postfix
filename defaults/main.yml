@@ -6,16 +6,15 @@
       command_directory: /usr/sbin
     master:
       - service: slow
-        type: unix
-        private: -
-        unpriv: -
+        type: "unix"
+        private: "-"
+        unpriv: "-"
       - service: email_rescue_processor
-        type:
-        private: -
-        unpriv:
+        type: "unix"
+        private: "-"
+        unpriv: "-"
         args:
-          - content_filter:
-          -
+          - content_filter: ""
     header_checks:
       feedback_id: WARN
       priority_server: 10.0.1.16
