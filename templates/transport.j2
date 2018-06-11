@@ -301,6 +301,6 @@ bounces.us.mc.maruhub.com			email_bounce_handler
 aolbounces.us.mc.maruhub.com			email_aol_bounce
 
 # Transport options retrieved from hiera (if applicable)
-{% for key,value in postfix.transport.items() %}
-{{ key }} {{ value }}:
+{% for item in postfix.transport %}
+{{ item.domain }} {{ item.rule }}:
 {% endfor %}
